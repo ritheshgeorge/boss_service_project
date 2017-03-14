@@ -1,0 +1,50 @@
+<Configuration>
+	<INTERNAL_USERS>
+		<LoginPolicy>
+			<MaxAttempts>3</MaxAttempts>
+			<MaxUserInactivityDays>30</MaxUserInactivityDays>			
+		</LoginPolicy>
+		<UserIdPolicy>
+			<MinLength>8</MinLength>
+			<MaxLength>12</MaxLength>
+			<CanContainFirstName>YES</CanContainFirstName> <!-- YES/NO -->
+			<CanContainLastName>YES</CanContainLastName> <!-- YES/NO -->
+		</UserIdPolicy>
+		<PasswordPolicy>
+			<MinLength>8</MinLength>
+			<MaxLength>12</MaxLength>
+			<ShouldContainNumber>YES</ShouldContainNumber> <!-- YES/NO -->
+			<ShouldContainLowerCase>YES</ShouldContainLowerCase> <!-- YES/NO -->
+			<ShouldContainUpperCase>YES</ShouldContainUpperCase> <!-- YES/NO -->
+			<ShouldContainSpecialChar>YES</ShouldContainSpecialChar> <!-- YES/NO -->
+			<PasswordExpireInDays>2</PasswordExpireInDays> <!--  The number is represented in days -->
+			<ReuseHistoricalPasswordLimit>2</ReuseHistoricalPasswordLimit> <!-- Bank can specify the number of historical passwords before the user is able to reuse it -->
+			<PriorPasswordReuseAge>1</PriorPasswordReuseAge> <!--  The number is represented in months EX: Password used in the last 12 months can't be used. -->
+			<SpecialCharacters><![CDATA[!@#$%^!&+=-]]></SpecialCharacters>
+		</PasswordPolicy>
+	</INTERNAL_USERS>
+	<EXTERNAL_USERS>
+		<LoginPolicy>
+			<MaxAttempts>3</MaxAttempts>
+			<MaxUserInactivityDays>10</MaxUserInactivityDays>			
+		</LoginPolicy>
+		<UserIdPolicy>
+			<MinLength>8</MinLength>
+			<MaxLength>12</MaxLength>
+			<CanContainFirstName>YES</CanContainFirstName> <!-- YES/NO -->
+			<CanContainLastName>NO</CanContainLastName> <!-- YES/NO -->
+		</UserIdPolicy>
+		<PasswordPolicy>
+			<MinLength>8</MinLength>
+			<MaxLength>12</MaxLength>
+			<ShouldContainNumber>YES</ShouldContainNumber> <!-- YES/NO -->
+			<ShouldContainLowerCase>YES</ShouldContainLowerCase> <!-- YES/NO -->
+			<ShouldContainUpperCase>YES</ShouldContainUpperCase> <!-- YES/NO -->
+			<ShouldContainSpecialChar>YES</ShouldContainSpecialChar> <!-- YES/NO -->
+			<PasswordExpireInDays>90</PasswordExpireInDays> <!--  The number is represented in days -->
+			<ReuseHistoricalPasswordLimit>8</ReuseHistoricalPasswordLimit> <!-- Bank can specify the number of historical passwords before the user is able to reuse it -->
+			<PriorPasswordReuseAge>12</PriorPasswordReuseAge> <!--  The number is represented in months EX: Password used in the last 12 months can't be used. -->
+			<SpecialCharacters><![CDATA[!@#$%^!&+=-]]></SpecialCharacters>
+		</PasswordPolicy>
+	</EXTERNAL_USERS>
+</Configuration>

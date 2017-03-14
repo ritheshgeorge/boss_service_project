@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd
+        http://www.springframework.org/schema/context         
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<import resource="spring-mongo.xml"/>
+	<bean id="BankAccountDAO" class="com.swapstech.boss.bank.dao.BankAccountDAO">
+		<property name="mongoTemplate">
+			<ref bean="mongoTemplate" />
+		</property>
+	</bean>
+	<bean id="PayeeDAO" class="com.swapstech.boss.payee.dao.PayeeDAO">
+		<property name="mongoTemplate">
+			<ref bean="mongoTemplate" />
+		</property>
+	</bean>
+	<bean id="PaymentDAO" class="com.swapstech.boss.payment.dao.PaymentDAO">
+		<property name="mongoTemplate">
+			<ref bean="mongoTemplate" />
+		</property>
+	</bean>
+	<bean id="RecurringPaymentDAO" class="com.swapstech.boss.payment.dao.RecurringPaymentDAO">
+		<property name="mongoTemplate">
+			<ref bean="mongoTemplate" />
+		</property>
+	</bean>
+	<bean id="UserDAO" class="com.swapstech.boss.user.dao.UserDAO">
+		<property name="mongoTemplate">
+			<ref bean="mongoTemplate" />
+		</property>
+	</bean>
+	<bean id="TransactionDAO" class="com.swapstech.boss.bank.dao.TransactionDAO">
+		<property name="mongoTemplate">
+			<ref bean="mongoTemplate" />
+		</property>
+	</bean>
+</beans>

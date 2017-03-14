@@ -1,0 +1,557 @@
+<Configuration>
+	<System>
+		<JSP>
+			<Title>FX STAR</Title>
+			<AppName>FX STAR</AppName>
+			<HomeHeading>FX STAR</HomeHeading>
+			<Logo>swapstech.png</Logo>
+			<LoginLogo>swapstech.png</LoginLogo>
+			<FXStream>
+				<Title>FX Hedging and Payments</Title>
+				<AppName></AppName>
+				<HomeHeading>FX Hedging and Payments</HomeHeading>
+			</FXStream>
+		</JSP>
+		<FXSTARRest>
+			<URI>http://fxstar-rest-elb-1070923074.us-east-1.elb.amazonaws.com</URI>
+		</FXSTARRest>
+		<FXOffice>
+			<URI>http://localhost:8080/fxoffice/rest/</URI>
+		</FXOffice>
+		<Mongo>
+			<!--  <ReplicaSet>52.24.168.101:27017</ReplicaSet>
+			<DatabaseName>fxstar</DatabaseName>
+			<Username>fxstar</Username>
+			<Password>fxstar</Password>    -->
+		  
+		    <ReplicaSet>localhost:27017</ReplicaSet>
+			<DatabaseName>fxstar</DatabaseName>
+			<Username></Username>
+			<Password></Password>   
+		</Mongo>
+		<!-- <MQ>
+			<Local>
+				<protocol>amqp</protocol>
+				<host>localhost</host>
+				<port></port>
+				<userid></userid>
+				<password></password>
+			</Local>
+			<External>
+				<protocol>amqp</protocol>
+				<host>localhost</host>
+				<port></port>
+				<userid></userid>
+				<password></password>
+			</External>
+			<host>localhost</host>
+			<port>5672</port>
+			<username>guest</username>
+			<password>guest</password>
+			<useSSL>false</useSSL>
+			<sslPropertiesLocation>classpath:/rabbitSSL.properties</sslPropertiesLocation>
+			<passphrase>None</passphrase>
+			 -->
+			
+			<MQ>
+			<Internal>
+				<protocol>amqp</protocol>
+				<host>localhost</host>
+				<port>5672</port>
+				<username>guest</username>
+				<password>guest</password>
+				<useSSL>false</useSSL>
+				<sslPropertiesLocation>classpath:/rabbitSSL.properties</sslPropertiesLocation>
+			</Internal>
+			<External>
+				<protocol>amqp</protocol>
+				<host>localhost</host>
+				<port>5672</port>
+				<username>guest</username>
+				<password>guest</password>
+				<useSSL>false</useSSL>
+				<sslPropertiesLocation>classpath:/rabbitSSL.properties</sslPropertiesLocation>
+				<passphrase>None</passphrase>
+			
+			</External>
+			
+			
+			</MQ>
+			
+			
+			
+			
+		<!-- </MQ> -->
+		<Email>
+			<Host>email-smtp.us-east-1.amazonaws.com</Host>
+			<Username>AKIAIFKQTJDSQ2WQJOFA</Username>
+			<Password>AtHiw4IGdcF3Y1e1k1dksNE3hIhTsBdDL1zTwf4sykkl</Password>
+			<FromId>murthy@swapstech.com</FromId>
+			<ToId></ToId>
+			<Port>587</Port>
+		</Email>
+		<Sms>
+			<ApiKey>e3ecfdaf</ApiKey>
+			<ApiSecret>8355ad79</ApiSecret>
+	  		<SmsFrom>15629673056</SmsFrom>
+		</Sms>
+		<Documents>
+			 <StorageType>S3</StorageType>
+			<S3Bucket>FNB_DOCUMENTS</S3Bucket>
+			<Confirms>
+				<Dir>confirms</Dir>
+			</Confirms>
+			<Reports>
+				<Dir>reports</Dir>
+			</Reports>
+			<ClientDocuments>
+				<Dir>client_documents</Dir>
+			</ClientDocuments>
+			<Others>
+				<Dir>miscellaneous</Dir>
+			</Others> 
+			
+			<!-- <StorageType>Local</StorageType>
+			<S3Bucket>NA</S3Bucket>
+			<Confirms>
+				<Dir>C:/swapstech/fxstar-edocs/Confirms</Dir>
+			</Confirms>
+			<Reports>
+				<Dir>C:/swapstech/fxstar-edocs/Reports</Dir>
+			</Reports>
+			<ClientDocuments>
+				<Dir>C:/swapstech/fxstar-edocs/Others</Dir>
+			</ClientDocuments>
+			<Settlements>
+				<Dir>C:/swapstech/fxstar-edocs/Settlements</Dir>
+			</Settlements>
+			<Batch>
+				<Dir>C:/swapstech/fxstar-edocs/Batch</Dir>
+			</Batch>
+			<PaymentNotice>
+				<Dir>C:/swapstech/fxstar-edocs/Others</Dir>
+			</PaymentNotice>
+			<Others>
+				<Dir>C:/swapstech/fxstar-edocs/Others</Dir>
+			</Others> -->
+			<MTM>
+				<Dir>C:/swapstech/fxstar-edocs/MTM</Dir>
+			</MTM>
+		</Documents>
+		<FileWatcher>
+			<StagingDirectory>C:/swapstech/fxstar-edocs/FileWatcher/Staging</StagingDirectory>
+			<BackupDirectory>C:/swapstech/fxstar-edocs/FileWatcher/Backup</BackupDirectory>
+			<PollingInterval>1000</PollingInterval>
+		</FileWatcher>
+		<Swift>
+			<BIC>
+				<File>
+					<Delimitter>\t</Delimitter>
+					<LoadAll>ALL</LoadAll>
+				</File>
+			</BIC>
+			<PollSwiftFiles>false</PollSwiftFiles>
+			<Local>
+				<Folder>
+					<Inbound>C:/Projects/FXStar/FileWatcher/SWIFT/Inbound</Inbound>
+					<Outbound>C:/Projects/FXStar/FileWatcher/SWIFT/Outbound</Outbound>
+				</Folder>
+			</Local>
+			<Backup>
+				<Folder>
+					<Inbound>C:/Projects/FXStar/FileWatcher/SWIFT/Inbound/Backup</Inbound>
+					<Outbound>C:/Projects/FXStar/FileWatcher/SWIFT/Outbound/Backup</Outbound>
+				</Folder>
+			</Backup>
+			<Remote>
+				<SFTP>
+					<Host>192.168.14.55</Host>
+					<Port>22</Port>
+					<Login>FNBPUS33</Login>
+					<Password>F8nB87p</Password>
+				</SFTP>
+				<Folder>
+					<Inbound>SWIFT/INBOUND</Inbound>
+					<Outbound>SWIFT/OUTBOUND</Outbound>
+				</Folder>
+			</Remote>
+			<MT94XEmailList>booshan@swapstech.com</MT94XEmailList>
+		</Swift>
+		<MCA>
+			<IncludeCurrentMonthTxns>Y</IncludeCurrentMonthTxns>
+		</MCA>
+		<BICLookup>
+			<ClientId>TEST</ClientId>
+			<Env>DEV</Env>
+			<LookupType>REMOTE</LookupType>
+		</BICLookup>
+		<OFAC>
+			<AnyWordMatch>Y</AnyWordMatch><!--  Y/N. If N then logic will try to match whole word -->
+			<SloppyCharCount>1</SloppyCharCount><!-- how many letters in a given word can be different -->
+		</OFAC>
+		<External>
+			<RateSources>Reuters,Intraday,Close</RateSources>
+			<ReferenceRateProvider>Reuters</ReferenceRateProvider>
+			<LiquidityProviders>Commerz,Citi,Barclays</LiquidityProviders>
+			<RateFactory>
+				<Intraday>com.swapstech.fxstar.marketdata.provider.MongoRateProvider</Intraday>
+				<Reuters>com.swapstech.fxstar.marketdata.provider.MongoRateProvider</Reuters>
+				<Close>com.swapstech.fxstar.marketdata.provider.MongoRateProvider</Close>
+				<Commerz>com.swapstech.fxstar.marketdata.provider.MongoRateProvider</Commerz>
+				<Citi>com.swapstech.fxstar.marketdata.provider.MongoRateProvider</Citi>
+				<Barclays>com.swapstech.fxstar.marketdata.provider.MongoRateProvider</Barclays>
+			</RateFactory>
+			<Channel>
+				<RateSource>
+					<FXWeb>Reuters</FXWeb>
+					<FXDesk>Reuters</FXDesk>
+					<FXCash>Reuters</FXCash>
+					<FXRetail>Reuters</FXRetail>
+					<FXRetailCorp>Reuters</FXRetailCorp>
+					<FXDraft>Reuters</FXDraft>
+				</RateSource>
+			</Channel>
+		</External>
+		<Regions>Cleveland,Pittsburgh,Norhtwest,Central,Capital,Maryland</Regions>
+		<Notification>
+			<TextPrefix>FXWeb </TextPrefix>
+			<LoginPin>
+				<Subject>FXSTAR - Two Factor Authorization for Login</Subject>
+				<Body>
+					<![CDATA[<html>
+				        <body>
+				        	Your security one time pin to login is <b>#PIN#</b>. Please do not reply to this message
+				        	<br><br>
+				        	<address style='color:blue'>
+				        		FXSTAR Platform<br>
+				        		SwapsTech Inc<br>
+				        		222 S Church St<br>
+				        		Charlotte, NC 28202<br>
+				        	</address>
+				        </body>
+				        </html>
+				     ]]>
+				</Body>
+				<SMS>FXSTAR Notice - Your security one time pin to login is #PIN#. Please do not reply to this message</SMS>
+			</LoginPin>
+			<PasswordReset>
+				<Subject>FXSTAR -  Password Reset</Subject>
+				<Body>
+					<![CDATA[<html>
+				        <body>
+				        	Password Reset Code:  You have requested to reset your password.  Please use this temporary code <b>#PIN#</b> to reset your password.
+				        	<br><br>
+				        	<address style='color:blue'>
+				        		FXSTAR Platform<br>
+				        		SwapsTech Inc<br>
+				        		222 S Church St<br>
+				        		Charlotte, NC 28202<br>
+				        	</address>
+				        </body>
+				        </html>
+				     ]]>
+				</Body>
+			</PasswordReset>
+			<BeneAuthPin>
+				<Subject>FXSTAR -  Beneficiary Authorization Pin</Subject>
+				<Body>
+					<![CDATA[<html>
+				        <body>
+				        	New Beneficiary is added.  A new beneficiary <b>#ACCT#</b> has been created#USER#. Use the PIN <b>#PIN#</b> to authorize this beneficiary.
+				        	<br><br>
+				        	<address style='color:blue'>
+				        		FXSTAR Platform<br>
+				        		SwapsTech Inc<br>
+				        		222 S Church St<br>
+				        		Charlotte, NC 28202<br>
+				        	</address>
+				        </body>
+				        </html>
+				     ]]>
+				</Body>
+				<SMS>FXSTAR Notice - A new beneficiary #ACCT# has been created#USER#. Use the PIN #PIN# to authorize this beneficiary.</SMS>
+			</BeneAuthPin>
+			<TradeInstrcutDetails>
+				<Subject>FXSTAR -  Trade Payment Details - #TRADENO#</Subject>
+				<Body>
+					<![CDATA[<html>
+				        <body>
+				        	#CUSTOMER# has instructed the payment of #CCY AMOUNT# to #BENE#.
+				        	<br><br>
+				        	<address style='color:blue'>
+				        		FXSTAR Platform<br>
+				        		SwapsTech Inc<br>
+				        		222 S Church St<br>
+				        		Charlotte, NC 28202<br>
+				        	</address>
+				        </body>
+				        </html>
+				     ]]>
+				</Body>
+				<SMS>#CUSTOMER# has instructed the payment of #CCY AMOUNT# to #BENE#.</SMS>
+			</TradeInstrcutDetails>
+			<TradePaymentDetails>
+				<Subject>FXSTAR -  Trade Payment Details - #TRADENO#</Subject>
+				<Body>
+					<![CDATA[<html>
+				        <body>
+				        	Your payment of #CCY AMOUNT# to #BENE# is ready to go.
+				        	<br><br>
+				        	<address style='color:blue'>
+				        		FXSTAR Platform<br>
+				        		SwapsTech Inc<br>
+				        		222 S Church St<br>
+				        		Charlotte, NC 28202<br>
+				        	</address>
+				        </body>
+				        </html>
+				     ]]>
+				</Body>
+				<!-- <SMS>FXSTAR Notice - A new beneficiary <b>#ACCT#</b> has been created#USER#. Use the PIN <b>#PIN#</b> to authorize this beneficiary.</SMS> -->
+			</TradePaymentDetails>
+			<TradeAuthorizeDetails>
+				<Subject>Western Alliance Bank eFX Trade Authorization Details - #TRADENO#</Subject>
+				<Body>
+					<![CDATA[<html>
+				        <body>
+				        	#CUSTOMER# has authorized the payment of #CCY AMT# to #BENE#
+				        	<br><br>
+				        	<address style='color:blue'>
+				        		FX Trading<br>
+				        		Western Alliance Bank<br>
+				        		55 Almaden Boulevard, Suite 100<br>
+				        		San Jose, CA 95113<br>
+				        	</address>
+				        </body>
+				        </html>
+				     ]]>
+				</Body>
+				<SMS>Western Alliance Bank eFX - #CUSTOMER# has authorized the payment of #CCY AMT# to #BENE#</SMS>
+			</TradeAuthorizeDetails>
+			<TradeConfirmDetails>
+				<Subject>FXSTAR -  Trade Confirmation - #TRADENO#</Subject>
+				<Body>
+					<![CDATA[<html>
+				        <body>
+				        	Hello,<br>
+				        	Attached please find the FX trade confirmation for today.  If you have any questions, contact foreign.exchange@westernalliancebank.com or call (866) 443-7259
+				        	<br>
+				        	Thank you,
+				        	<br><br>
+				        	<address style='color:blue'>
+				        		FXSTAR Platform<br>
+				        		SwapsTech Inc<br>
+				        		222 S Church St<br>
+				        		Charlotte, NC 28202<br>
+				        	</address>
+				        </body>
+				        </html>
+				     ]]>
+				</Body>
+				<SMS>FXSTAR Notice -Your trade #TRADENO# to #CCY1 AMT# and #CCY2 AMT# has been confirmed.</SMS>
+			</TradeConfirmDetails>	
+			<TradeCancellationNotice>
+				<Subject>FXSTAR -  Trade Cancellation Notice</Subject>
+				<Body>
+					<![CDATA[<html>
+				        <body>
+				        	Please find the trade cancellation notice of your FX trade. If you have questions, please call (866) 443-7259. 
+				        	<br><br>
+				        	<address style='color:blue'>
+				        		FXSTAR Platform<br>
+				        		SwapsTech Inc<br>
+				        		222 S Church St<br>
+				        		Charlotte, NC 28202<br>
+				        	</address>
+				        </body>
+				        </html>
+				     ]]>
+				</Body>
+				<!-- <SMS>FXSTAR Notice - A new beneficiary <b>#ACCT#</b> has been created#USER#. Use the PIN <b>#PIN#</b> to authorize this beneficiary.</SMS> -->
+			</TradeCancellationNotice>
+			<Support>
+				<EmailList>saurabh@swapstech.com</EmailList>
+			</Support>
+			<NewTrade>
+				<TextNumbers>7048199104</TextNumbers>
+			</NewTrade>
+			<RFQ>
+				<TextNumbers>7048199104</TextNumbers>
+				<EmailList>saurabh@swapstech.com</EmailList>
+			</RFQ>
+			<OFACHit>
+				<EmailList>saurabh@swapstech.com</EmailList>
+				<Level2EmailList>saurabh@swapstech.com</Level2EmailList>
+			</OFACHit>
+			<SFTPError>
+				<EmailList>booshan@swapstech.com</EmailList>
+			</SFTPError>
+		</Notification>
+		<Reports>
+			<ClientDebit>
+				<ToEmails>booshan@swapstech.com</ToEmails>
+				<Subject>FX Client Debit Report</Subject>
+				<Content>Please find the FX Client Debit Report attached.</Content>
+			</ClientDebit>
+			<RevenueReport>
+				<ToEmails>booshan@swapstech.com</ToEmails>
+				<Subject>FX Revenue Report</Subject>
+				<Content>Please find the FX Regional Revenue Report attached.</Content>
+			</RevenueReport>
+			<CoverBankSettlement>
+				<ToEmails>booshan@swapstech.com</ToEmails>
+				<Subject>FX Counterparty Bank Settlement Report</Subject>
+				<Content>Please find the FX Counterparty Bank Settlement Report attached.</Content>
+			</CoverBankSettlement>
+			<MarketPosition>
+				<ToEmails>booshan@swapstech.com</ToEmails>
+				<Subject>FX Market Position Report</Subject>
+				<Content>Please find the FX Market Position Report attached.</Content>
+			</MarketPosition>
+			<StarBillingReport>
+				<ToEmails>booshan@swapstech.com</ToEmails>
+				<Subject>SwapsTech Monthly Billing Report </Subject>
+				<Content>Please find the SwapsTech FX STAR Billing Report attached.</Content>
+				<MonthlyReportTitle>Monthly Billing Report </MonthlyReportTitle>
+			</StarBillingReport>
+		</Reports>
+		
+		<DTCC>
+			<!-- accountId>00005Z04</accountId -->
+			<AccountId>00007Z76</AccountId>
+			<ConnectionType>WS</ConnectionType>
+			<WebService>
+				<Login>booshan</Login>
+				<Password>Sushmita45</Password>
+				<Certificate>
+					<Location>dtcc/dtcc.cer</Location>
+					<Password>ap5gdjj7</Password>
+				</Certificate>
+				<FX>
+					<CSVSubmitService>https://ws.dtcc.com/sdbpse/services/FXCSVTradeReportService</CSVSubmitService>
+					<FpMLSubmitService>https://ws.dtcc.com/sdbpse/services/FXTradeReportService</FpMLSubmitService>
+					<InquiryService>https://ws.dtcc.com/sdbpse/services/FXTradeInquiryService</InquiryService>
+				</FX>
+			</WebService>
+		</DTCC>
+		<!-- <MultiAuth>
+			<LegalEntity>Yes</LegalEntity>
+			<LegalContact>Yes</LegalContact>
+			<BankAccount>Yes</BankAccount>
+			<BeneAccount>Yes</BeneAccount>
+			<NostroAccount>Yes</NostroAccount>
+			<GLAccount>Yes</GLAccount>
+			<User>Yes</User>
+		</MultiAuth> -->
+	</System>
+	<ETrade>
+		<Config>
+			<logHeartbeats>true</logHeartbeats>
+			<Integral>
+				<Location>C:/Projects/ETrade/Config/Integral.cfg</Location>
+				<UserName>stpuser</UserName>
+				<Password>Forex123</Password>
+				<OrgId>CCMSTPTEST</OrgId>
+			</Integral>
+			<Three60T>
+				<Location>C:/Projects/ETrade/Config/Integral.cfg</Location>
+				<UserName>stpuser</UserName>
+				<Password>Forex123</Password>
+				<OrgId>CCM.TEST</OrgId>
+			</Three60T>
+		</Config>
+	</ETrade>
+	<ProcessMonitor>
+		<ServiceUserId>sysadmin</ServiceUserId>
+		<ServicePassword>Packard222</ServicePassword>
+		<!-- Heartbeat interval in sec -->
+		<HeartbeatInterval>300</HeartbeatInterval>
+	</ProcessMonitor>
+	<Hazelcast>
+		<client>
+			<reconnect>120000</reconnect> <!-- if cluster is not available ...retry after milliseconds -->
+			<config>
+				<file>hazelcast/client/DEVPC.hazelcast-client.xml</file><!-- read the file from classpath -->
+			</config>
+		</client>
+		<member>
+			<config>
+				<file>hazelcast/member/DEVPC.hazelcast.xml</file>
+			</config>
+		</member>
+	</Hazelcast>
+	<RFS>false</RFS>
+	<Sector>
+		<Name>Private Banking</Name>
+		<Name>Technology</Name>
+		<Name>IT</Name>
+		<Name>Pharma</Name>
+		<Name>Hospitals</Name>
+	</Sector>
+	<CostCenter>
+		<CC>1004^The Palisades Group</CC>
+		<CC>3129^Private Banking</CC>
+		<CC>2700^Private Banking</CC>
+		<CC>3131^Business Banking - LA</CC>
+		<CC>2751^Business Banking - LA</CC>
+		<CC>3101^Business Banking - OC</CC>
+		<CC>2753^Business Banking - OC</CC>
+		<CC>2756^Business Banking - BPOP</CC>
+		<CC>2750^Business Banking - Admin</CC>
+		<CC>2095^Financial Institutions Banking</CC>
+		<CC><![CDATA[2051^CRE & Multi-Family Lending]]></CC>
+		<CC><![CDATA[2052^CRE & Multi-Family Lending - BPOP]]></CC>
+		<CC><![CDATA[2090^Construction & Renovation Lending]]></CC>
+		<CC><![CDATA[2091^Construction & Renovation Lending - BPOP]]></CC>
+		<CC>2070^Commercial Finance</CC>
+		<CC>2080^SBA Lending</CC>
+		<CC>2400^Warehouse Lending</CC>
+		<CC>2000^Green Loans (1-4 Res)</CC>
+		<CC>2100^Portfolio Lending</CC>
+		<CC>2105^Portfolio Lending - BPOP</CC>
+		<CC>2150^CS Financial</CC>
+		<CC>2151^CS Financial</CC>
+		<CC>2200^Bank Home Loans</CC>
+		<CC>6310^Treasury</CC>
+		<CC>6100^Treasury</CC>
+		<CC>4020^Treasury</CC>
+		<CC>3000^Administration</CC>
+		<CC>3200^Investment Services</CC>
+		<CC>3132^Pacific Palisades</CC>
+		<CC>3133^Rancho Santa Fe</CC>
+		<CC>3134^Fullerton</CC>
+		<CC>3135^Santa Barbara</CC>
+		<CC>3124^Pasadena</CC>
+		<CC>3125^Manhattan Beach</CC>
+		<CC>3111^La Jolla</CC>
+		<CC>3112^San Marcos</CC>
+		<CC>3114^Century City</CC>
+		<CC>3115^Santa Monica</CC>
+		<CC>3116^Laguna</CC>
+		<CC>3110^Rancho Bernardo</CC>
+		<CC>3118^Tustin</CC>
+		<CC>3119^Newport Beach</CC>
+		<CC>3127^Costa Mesa</CC>
+		<CC>3126^Long Beach</CC>
+		<CC>3312^Brea</CC>
+		<CC>3313^Fullerton Main</CC>
+		<CC>3314^La Mirada</CC>
+		<CC>3315^Haciends Heights</CC>
+		<CC>3316^Fashion Square</CC>
+		<CC>3317^Alta Vista</CC>
+		<CC>3318^Anaheim Hills</CC>
+		<CC>3319^Rowland Heights</CC>
+		<CC>3320^Anaheim Main</CC>
+		<CC>3301^Commerce</CC>
+		<CC>3302^Montebello</CC>
+		<CC>3303^Downey</CC>
+		<CC>3304^LA Downtown</CC>
+		<CC>3306^Paramount</CC>
+		<CC>3307^Santa Fe Springs</CC>
+		<CC>3305^Wilmington</CC>
+		<CC>3308^Garden Grove</CC>
+		<CC>3309^Whittier Main</CC>
+		<CC>3310^East Whittier</CC>
+		<CC>3311^La Habra</CC>
+	</CostCenter>
+</Configuration>

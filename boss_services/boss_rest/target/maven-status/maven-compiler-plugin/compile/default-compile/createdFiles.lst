@@ -1,0 +1,7 @@
+com\swapstech\fxstar\services\controller\UserController.class
+com\swapstech\fxstar\services\controller\PaymentController.class
+com\swapstech\fxstar\services\controller\HomeController.class
+com\swapstech\fxstar\services\controller\BankAccountController.class
+com\swapstech\fxstar\services\RESTConfiguration.class
+com\swapstech\fxstar\services\controller\PayeeController.class
+com\swapstech\boss\test\Test.class
