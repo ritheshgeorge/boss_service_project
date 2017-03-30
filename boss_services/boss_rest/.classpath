@@ -80,7 +80,6 @@
 	<classpathentry kind="var" path="M2_REPO/org/springframework/amqp/spring-amqp/1.5.4.RELEASE/spring-amqp-1.5.4.RELEASE.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/rabbitmq/http-client/1.0.0.RELEASE/http-client-1.0.0.RELEASE.jar"/>
 	<classpathentry kind="var" path="M2_REPO/com/rabbitmq/amqp-client/3.5.7/amqp-client-3.5.7.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/boss-adapter"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
@@ -93,5 +92,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/boss-services"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

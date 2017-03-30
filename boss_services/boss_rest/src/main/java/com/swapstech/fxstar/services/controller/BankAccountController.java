@@ -12,7 +12,7 @@ import com.swapstech.boss.bank.dao.TransactionDAO;
 import com.swapstech.boss.bank.model.BankAccount;
 import com.swapstech.boss.bank.model.Transaction;
 
-@RestController
+@RestController 
 @RequestMapping("/bankAccount")
 public class BankAccountController {
 	@RequestMapping("/getAccount_list/{leId}")
