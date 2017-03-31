@@ -1,6 +1,8 @@
 package com.swapstech.fxstar.services.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,13 +16,15 @@ import com.swapstech.boss.user.dao.UserDAO;
 import com.swapstech.boss.user.model.User;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user") 
 public class UserController {
+	
 	@RequestMapping("/getUserList")
 	public List<User> getAllPayment(
 			@RequestParam String leId
 			){
 		List<User> userList = UserDAO.getInstance().findAllUserByLEID(leId);
+		
 		return userList;
 	}
 	@RequestMapping("/getUser")

@@ -1,6 +1,7 @@
 package com.swapstech.boss.payment.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.joda.time.LocalDate;
 import org.springframework.data.annotation.Id;
@@ -25,11 +26,12 @@ public class Payment implements Serializable{
 	private String feePaidBy;
 	private String status;
 	private Boolean isInternational;
-	private Document documents;
+	private List<Document> documents;
 	
 	private String purposeOfPayment;
 	private String phoneNumber;
 	private String emailAddress;
+	
 	
 	public String getId() {
 		return id;
@@ -115,10 +117,11 @@ public class Payment implements Serializable{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public Document getDocuments() {
+	
+	public List<Document> getDocuments() {
 		return documents;
 	}
-	public void setDocuments(Document documents) {
+	public void setDocuments(List<Document> documents) {
 		this.documents = documents;
 	}
 	public static long getSerialversionuid() {

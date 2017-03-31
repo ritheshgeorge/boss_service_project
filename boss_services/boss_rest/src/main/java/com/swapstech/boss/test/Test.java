@@ -1,5 +1,8 @@
 package com.swapstech.boss.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.joda.time.LocalDate;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,7 +13,11 @@ import com.swapstech.boss.bank.model.Transaction;
 import com.swapstech.boss.payee.dao.PayeeDAO;
 import com.swapstech.boss.payee.model.Payee;
 import com.swapstech.boss.payment.dao.PaymentDAO;
+import com.swapstech.boss.payment.dao.RecurringPaymentDAO;
 import com.swapstech.boss.payment.model.Payment;
+import com.swapstech.boss.payment.model.RecurringPayment;
+import com.swapstech.boss.user.dao.UserDAO;
+import com.swapstech.boss.user.model.User;
 
 public class Test {
 	
@@ -21,7 +28,7 @@ public class Test {
 		int amt = 52000;
 		int next = amt;
 		for(int i=1;i<=15;i++){
-			
+			/*
 			Transaction t = new Transaction();
 			t.setAccountId("58c1ba19fdd2891de8599419"); //sACT 726
 			LocalDate nextDate = today.plusDays(i);
@@ -35,7 +42,18 @@ public class Test {
 			t.setStatus("Pending");
 			next = amt-(i*121);
 			TransactionDAO.getInstance().save(t);
+			
+			*/
+			
+			
 		}
+		
+		List<User> userList = UserDAO.getInstance().findAllUserByLEID("abc123abc");
+		for(User user: userList){
+			System.out.println("Test.main()");
+		}
+		
+		
 		
 		
 	}

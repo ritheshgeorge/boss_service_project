@@ -9,8 +9,7 @@
         <version>1.0</version>
         <relativePath>..</relativePath>
     </parent>
-
-    <artifactId>boss-rest</artifactId>
+	<artifactId>boss-rest</artifactId>
     <packaging>war</packaging>
     <name>Business Banking REST API</name>
     <dependencies>

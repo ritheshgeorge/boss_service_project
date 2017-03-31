@@ -3,13 +3,13 @@ com\swapstech\boss\bank\dao\BankAccountDAO.class
 com\swapstech\boss\common\model\Document.class
 com\swapstech\boss\common\model\Bank.class
 com\swapstech\boss\common\dao\MongoDAO.class
+com\swapstech\boss\common\model\DeliveryMethod.class
 com\swapstech\boss\common\util\AppContext.class
 com\swapstech\boss\payment\util\PaymentStatus.class
 com\swapstech\boss\bank\model\Transaction.class
 com\swapstech\boss\payee\dao\PayeeDAO.class
 com\swapstech\boss\payment\model\RecurringPayment.class
 com\swapstech\boss\common\model\Address.class
-com\swapstech\boss\dummy\GenerateAccountObject.class
 com\swapstech\boss\payee\model\Payee.class
 com\swapstech\boss\user\model\User.class
 com\swapstech\boss\bank\dao\TransactionDAO.class

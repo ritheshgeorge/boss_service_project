@@ -22,7 +22,7 @@ public class User implements Serializable{
 	private String status;
 	private String entityId;
 	private BigDecimal failedLogins;
-	private Map<String,Boolean> entitlements;
+	private List<Entitlement> entitlements;
 	
 	
 	public String getId() {
@@ -91,10 +91,10 @@ public class User implements Serializable{
 	public void setEntityId(String entityId) {
 		this.entityId = entityId;
 	}
-	public Map<String,Boolean> getEntitlements() {
+	public  List<Entitlement> getEntitlements() {
 		return entitlements;
 	}
-	public void setEntitlements( Map<String,Boolean>  entitlements) {
+	public void setEntitlements(  List<Entitlement>  entitlements) {
 		this.entitlements = entitlements;
 	}
 	

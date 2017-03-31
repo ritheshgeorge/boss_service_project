@@ -7,7 +7,6 @@ public class Document {
 	private String documentName;
 	private String directory;
 	private String fileName;
-	private String status;
 	private String legalEntityId;
 	private String createTime;
 	
@@ -36,12 +35,7 @@ public class Document {
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+
 	public String getLegalEntityId() {
 		return legalEntityId;
 	}

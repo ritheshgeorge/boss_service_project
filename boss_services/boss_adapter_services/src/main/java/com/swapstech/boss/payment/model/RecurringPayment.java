@@ -5,9 +5,11 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 
 public class RecurringPayment implements Serializable{
-	private static final long serialVersionUID = -379687940556643610L;
-	@Id
-	private String Id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String id;
 	private String paymentId;
 	private String frequency;
 	private String firstPaymentDate;
@@ -17,10 +19,10 @@ public class RecurringPayment implements Serializable{
 	private String cronPattern;
 	private String status;
 	public String getId() {
-		return Id;
+		return id;
 	}
 	public void setId(String id) {
-		Id = id;
+		id = id;
 	}
 	public String getPaymentId() {
 		return paymentId;

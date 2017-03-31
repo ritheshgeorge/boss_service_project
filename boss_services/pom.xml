@@ -24,8 +24,7 @@
         </pluginManagement>
     </build>
 	<modules>
-		
-		<module>boss_rest</module>
 		<module>boss_adapter_services</module>
+		<module>boss_rest</module>
 	</modules>
 </project>
